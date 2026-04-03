@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="glass-header">
+        <div class="header-content">
+            <div class="logo">Modern<span>News</span></div>
+            <div class="search-container">
+                <input type="search" id="search-input" placeholder="Search for news...">
+                <button id="search-btn">🔍</button>
+            </div>
+            <div class="actions">
+                <div class="user-status" id="user-status">
+                    <span class="user-badge" id="user-badge">Guest</span>
+                    <button class="auth-btn" id="login-button">Log in</button>
+                    <button class="auth-btn secondary hidden" id="logout-button">Log out</button>
+                </div>
+                <button class="theme-toggle" id="theme-toggle">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="welcome-panel">
+            <div>
+                <p class="welcome-label">Member Area</p>
+                <h1 id="welcome-title">Welcome, guest</h1>
+                <p id="welcome-message">Log in to personalize your news feed and save articles for later.</p>
+            </div>
+            <button class="primary-cta" id="hero-login-button">Sign in</button>
+        </section>
+
+        <section class="profile-card hidden" id="profile-card">
+            <h2>Your session</h2>
+            <div class="profile-grid">
+                <div>
+                    <span class="profile-label">User Name</span>
+                    <p id="profile-username">-</p>
+                </div>
+                <div>
+                    <span class="profile-label">Email</span>
+                    <p id="profile-email">-</p>
+                </div>
+                <div>
+                    <span class="profile-label">Plan</span>
+                    <p>Standard Member</p>
+                </div>
+            </div>
+        </section>
+
+        <div id="campaign-widget-container"></div>
+
+        <div class="feed-controls">
+            <h2>Latest Stories</h2>
+            <div class="control-buttons">
+                <button id="btn-latest" class="active">Latest</button>
+                <button id="btn-recommended">Recommended</button>
+            </div>
+        </div>
+
+        <div id="news-grid" class="news-grid"></div>
+    </main>
+
+    <div class="modal-backdrop hidden" id="login-modal-backdrop"></div>
+    <div class="auth-modal hidden" id="login-modal" role="dialog" aria-modal="true" aria-labelledby="login-modal-title">
+        <div class="auth-modal-header">
+            <div>
+                <p class="modal-eyebrow">Member Sign In</p>
+                <h2 id="login-modal-title">Log in to ModernNews</h2>
+            </div>
+            <button class="modal-close" id="close-login-modal" aria-label="Close">×</button>
+        </div>
+
+        <form id="login-form" class="auth-form">
+            <label>
+                <span>User Name</span>
+                <input type="text" id="login-username" name="username" placeholder="demo_user" required>
+            </label>
+            <label>
+                <span>Email</span>
+                <input type="email" id="login-email" name="email" placeholder="demo@example.com" required>
+            </label>
+            <label>
+                <span>Password</span>
+                <input type="password" id="login-password" name="password" placeholder="••••••••" required>
+            </label>
+            <button type="submit" class="primary-cta full-width">Log in</button>
+        </form>
+    </div>
+
+    <script src="app.js"></script>
+    <!-- <script src="http://localhost:4000/external-recommendation.js"></script>
+    <script src="http://localhost:4000/campaign-widget.js"></script> -->
+    <script src="http://localhost:4000/external-recommendation.js"
+        integrity="sha384-JRV0Wc5mmq420yFehjUtVb9bOhQqEhgkX+I3xbTXnYCsbJi9WxmZIGtL/2S9AW9Y" crossorigin="anonymous">
+        </script>
+
+    <script src="http://localhost:4000/campaign-widget.js"
+        integrity="sha384-jBSfdOwEpcZn3fv2WXHYmp0EeOSLJRGv/EnzWZxh2xNH7bEE/8e5rC50GI72/9ti" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
